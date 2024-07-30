@@ -1,0 +1,32 @@
+<div>
+    <h2>Manage Orders</h2>
+    <form >
+      <div>
+        <label>User ID:</label>
+        <input formControlName="userId" placeholder="User ID">
+      </div>
+      <div>
+        <label>Product IDs (comma separated):</label>
+        <input formControlName="productIds" placeholder="Product IDs">
+      </div>
+      <div>
+        <label>Total Amount:</label>
+        <input formControlName="totalAmount" placeholder="Total Amount">
+      </div>
+      <button type="button" (click)="createOrder()">Create Order</button>
+    </form>
+    <br/>
+    <form >
+      <label>Order ID:</label>
+      <input formControlName="orderId" placeholder="Order ID">
+      <button type="button" (click)="getOrderById()">Get Order</button>
+      <button type="button" (click)="updateOrder()">Update Order</button>
+      <button type="button" (click)="deleteOrder()">Delete Order</button>
+    </form>
+  </div>
+  
+  <div *ngIf="orderForm.value">
+    <h3>Order Details</h3>
+    <pre>{{ orderForm.value }}</pre>
+  </div>
+  

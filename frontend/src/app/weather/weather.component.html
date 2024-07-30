@@ -1,0 +1,17 @@
+<div class="card text-center m-5">
+    <div class="card-header">
+      Weather
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{city}}</h5>
+     
+      <p>Temperature: {{ weatherData.main.temp }} °C</p>
+      <p>Humidity: {{ weatherData.main.humidity }} %</p>
+      <p>Condition: {{ weatherData.weather[0].description }}</p>
+      
+
+    </div>
+    <div class="card-footer text-muted">
+     
+    </div>
+  </div>

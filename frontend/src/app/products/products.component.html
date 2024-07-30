@@ -1,0 +1,31 @@
+<div class="shadow p-4 border">
+    <div class="flex justify-between p-4">
+        <h2 class="text-xl font-semibold">Products Details</h2>
+        <button mat-raised-button color="primary" routerLink="/products/add" >
+            Add Product</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (product of products; track $index) {
+                <tr>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.description}}</td> 
+                    <td>
+                        <button mat-raised-button color="accent" class="mr-4" [routerLink]="'/products/'+product._id">EDIT</button>
+                        <button mat-raised-button color="warn" (click)="delete(product._id!)">DELETE</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

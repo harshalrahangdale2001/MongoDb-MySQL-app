@@ -1,0 +1,36 @@
+<div class="shadow border p-4">
+    @if (editProductId) {
+        <h2>Update Products</h2>
+    }@else{
+        <h2>Add Products</h2>
+    }
+ 
+    <form [formGroup]="productForm">
+        <div class="flex flex-wrap">
+            <form class="example-form">
+                <mat-form-field class="w-full">
+                  <mat-label>Product Name</mat-label>
+                  <input type="text" matInput formControlName="name"/>
+                </mat-form-field>
+                <mat-form-field class="w-full">
+                    <mat-label>Price</mat-label>
+                    <input type="number" matInput formControlName="price"/>
+                  </mat-form-field>
+                  <mat-form-field class="w-full">
+                    <mat-label>Description</mat-label>
+                    <input type="text" matInput formControlName="description"/>
+                  </mat-form-field>
+              </form>
+              
+        </div>
+        <div class="flex justify-center">
+            @if (editProductId) {
+                <button mat-raised-button color="primary" (click)="updateProduct()">
+                    Update Product</button>
+            }@else{
+                <button mat-raised-button color="primary" (click)="addproduct()">
+                    Add Product</button>
+                }
+        </div>
+    </form>
+</div>
